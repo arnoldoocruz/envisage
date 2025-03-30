@@ -1,0 +1,1674 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.title {
+    margin: 20px auto 0;
+    text-align: center;
+}
+
+.component {
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.main-logo {
+    cursor: pointer;
+    height: 5vh;
+}
+
+
+@font-face {
+    font-family: 'Paris Pro Light';
+    src: local('Paris Pro Light'), url(../../public/font/Paris-Pro-Ultra-Extra-Light-Moshik-Nadav.otf) format('truetype');
+}
+@font-face {
+    font-family: 'Paris Pro Bold';
+    src: local('Paris Pro Bold'), url(../../public/font/Paris-Pro-Light-Book-Moshik-Nadav.otf) format('truetype');
+}
+@font-face {
+    font-family: 'Paris-Pro-Ultra-Extra-Light';
+    src: local('Paris Pro Light'), url(../../public/font/Paris-Pro-Ultra-Extra-Light-Moshik-Nadav.otf) format('truetype');
+}
+@font-face {
+    font-family: 'Paris-Pro-Light';
+    src: local('Paris Pro Bold'), url(../../public/font/Paris-Pro-Light-Book-Moshik-Nadav.otf) format('truetype');
+}
+
+
+.navbar-container-rt {
+    width: 2vw;
+    position: fixed;
+    z-index: 2000;
+}
+.main-area-rt {
+    width: calc(100% - 2vw);
+    float: right;
+}
+.navbar-rt {
+    width: 2vw;
+    max-width: 2vw;
+    height: 100vh;
+    background-color:rgba(17, 17, 17, 1);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+.nav-rt {
+    width: 100%;
+    height: 16.5vh;
+    position: relative;
+    margin: 0;
+    transition: 1s;
+}
+.nav-rt p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: white;
+    font-size: 0.5vw;
+    letter-spacing: .7ch;
+    transform: translateY(-50%) translateX(-50%) rotate(270deg);
+    font-weight: 300;
+    text-transform: uppercase;
+    line-height: 1.5;
+    margin: 0;
+    font-family: "Paris Pro Bold"!important;
+    cursor: pointer;
+}
+.project-nav-rt {
+    position: absolute;
+    width: 1vh;
+    top: 0;
+    left: 100%;
+    background: #eeeeee;
+    height: 100%;
+}
+.fourth-toggle-rt {
+    position: absolute;
+    border: 0;
+    color: #252639;
+    background: #eeeeee;
+    left: 100%;
+    font-size: 1.85vh;
+    padding: 0 0.4vh 0 1.2vh;
+    outline: none;
+    cursor: pointer;
+    transition: 0.2s;
+    z-index: 100;
+}
+.nav-selected-rt > p {
+    color: #c9ae96;
+    font-weight: 500;
+    transition: 1.2s cubic-bezier(0.81, 0.07, 0.4, 0.9);
+}
+.navbar-selection-rect-rt {
+    position: absolute;
+    width: 0.2vw;
+    height: 16.6vh;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    background: #c9ae96;
+    left: 100%;
+    top: 0.5vh;
+    transition: 1.2s cubic-bezier(0.81, 0.07, 0.4, 0.9);
+    z-index: 10000;
+}
+
+
+.fourth-menu-left-rt {
+    position: fixed;
+    height: 100%;
+    width: 18vw;
+    background: #fff;
+    float: left;
+    transition: 0.4s;
+    box-shadow: 1px -2px 5px 0px #0000000d;
+    left: -18vw;
+    padding: 0;
+    margin: 0;
+    z-index: 1000;
+}
+.fourth-close-btn-rt {
+    float: right;
+    border: none;
+    background: white;
+    font-size: 2.4vh;
+    padding: 1px 8px;
+    cursor: pointer;
+    color: #5f5f5f;
+    outline: none;
+    transition: 0.2s;
+    margin: 5px 5px 0 0;
+}
+.fourth-menu-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    background: white;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    transition: .7s ease-out;
+}
+.fourth-featured {
+    font-family: Paris-Pro-Ultra-Extra-Light;
+    position: absolute;
+    top: 9.26vh;
+    left: 4.63vh;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.fourth-featured li {
+    width: 50%;
+    padding: 5px;
+    list-style: none;
+    cursor: default;
+}
+.fourth-menu-container li a {
+    line-height: normal;
+    display: inline-block;
+    font-size: 1vw;
+    font-weight: 400;
+    font-family: Paris-Pro-Light;
+    color: #000;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+}
+.fourth-menu-headline-rt {
+    list-style: none;
+    font-family: Paris-Pro-Ultra-Extra-Light;
+    font-size: 1vw;
+    margin-bottom: 3.7vh;
+    font-weight: bolder;
+}
+.fourth-content-rt {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.fourth-nav-content-rt {
+    list-style: none;
+    padding-left: 1.5vw;
+}
+.fourth-nav-content-rt > li > a {
+    font-family: Paris-Pro-Light;
+    color: #000;
+    line-height: 1.5;
+    text-align: left;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: block;
+    font-weight: 700;
+    margin: auto 0;
+    font-size: 1vw;
+    text-decoration: none;
+}
+
+.component.first-component {
+    position: relative;
+    background-image: url('../../public/img/homepage/back0.jpg');
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: 1.0s 0.2s;
+}
+
+.main-content-rt {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    flex-grow: 0;
+    flex-basis: 74%;
+    height: 74%;
+    padding-top: 3.65vh;
+}
+.first-blank-33-rt {
+    flex-grow: 0;
+    max-width: 37.2%;
+    flex-basis: 37.2%;
+    position: relative;
+}
+.first-column-26-rt {
+    flex-grow: 0;
+    max-height: 26%;
+    flex-basis: 26%;
+}
+.first-column-74-rt {
+    flex-grow: 0;
+    max-height: 74%;
+    flex-basis: 74%;
+    display: flex;
+}
+.first-row-31 {
+    flex-grow: 0;
+    max-width: 31%;
+    flex-basis: 31%;
+}
+.first-row-69 {
+    flex-grow: 0;
+    max-width: 69%;
+    flex-basis: 69%;
+    padding-right: 4vw;
+}
+.content-middle-rt {
+    flex-grow: 0;
+    max-width: 34.4%;
+    flex-basis: 34.4%;
+    padding: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.we-are-div-rt {
+    height: 6.67vh;
+}
+.we-are-rt {
+    color: #c9ae96;
+    font-size: 5.55vh;
+    text-transform: uppercase;
+    font-family: "Paris Pro Bold"!important;
+    font-weight: 500;
+}
+.an-rt {
+    color: white;
+    text-transform: lowercase;
+    font-size: 5.55vh;
+    font-family: Paris Pro Light !important;
+    font-weight: lighter;
+}
+.award-winning {
+    text-align: right;
+}
+.award-winning > span {
+    font-family: "Paris Pro Bold"!important;
+    color: white;
+    font-size: 3.2vh;
+    line-height: 1.1;
+    text-transform: uppercase;
+    font-weight: lighter;
+}
+.first-description-rt {
+    background-color: white;
+    padding: 1.85vh 3.7vh 1.85vh 1.85vh;
+    flex-grow: 0;
+    max-width: 28.4%;
+    flex-basis: 28.4%;
+    display: flex;
+    flex-direction: column;
+}
+.first-description-logo {
+    flex-grow: 0;
+    flex-basis: 22.22%;
+    max-height: 22.22%;
+    padding-top: 2.78vh;
+    display: flex;
+}
+.first-description-logo img {
+    height: 5vh;
+}
+.flex-w-50-rt {
+    flex-grow: 0;
+    flex-basis: 50%;
+    max-width: 50%;
+}
+.first-description-title-rt p {
+    color: #282828;
+    font-size: 1.5vh;
+    text-align: justify;
+    font-weight: bold;
+    line-height: 1.5;
+    text-transform: uppercase;
+    font-family: "Paris Pro Bold"!important;
+    margin-bottom: 4.63vh;
+}
+.first-description-content-rt p {
+    color: #282828;
+    font-size: 1.85vh;
+    text-align: justify;
+    font-family: "Paris Pro Light"!important;
+    font-weight: bold;
+    margin-bottom: 3.7vh;
+}
+.first-main-description-area-rt {
+    display: flex;
+}
+.flex-w-18 {
+    flex-grow: 0;
+    flex-basis: 14%;
+    max-width: 14%;
+}
+.flex-w-60 {
+    flex-grow: 0;
+    flex-basis: 59%;
+    max-width: 59%;
+}
+.first-bottom-rt {
+    display: flex;
+    width: 100%;
+    flex-grow: 0;
+    flex-basis: 26%;
+    height: 26%;
+    padding-bottom: 55px;
+}
+.first-bottom-content-rt {
+    background-color: #c9ae96;
+    min-height: 15vh;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-basis: 34.4%;
+    max-width: 34.4%;
+}
+.first-bottom-content-rt > a {
+    color: #282828;
+    font-size: 1.11vh;
+    text-align: justify;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: "Paris Pro Bold"!important;
+    margin: auto;
+    text-decoration: none;
+}
+.first-left-arrow-rt {
+    position: absolute;
+    top: 50%;
+    left: 5.2vw;
+    cursor: pointer;
+}
+.first-right-arrow-rt {
+    position: absolute;
+    bottom: 50%;
+    left: 66.67%;
+    cursor: pointer;
+}
+.first-back-pos-containter {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    max-width: 28.4%;
+    flex-basis: 28.4%;
+}
+.first-back-pos-containter > div {
+    height: 3vh;
+    width: 9vh;
+    background: url('../../public/img/homepage/status0.png');
+    background-size: cover;
+    transition: 1s;
+}
+.first-left-arrow-rt > img, .first-right-arrow-rt > img {
+    height: 3vh;
+}
+
+
+.text-content-rt {
+    color: #231f20;
+    font-size: 2vh;
+    text-align: justify;
+    font-weight: lighter;
+    font-family: "Paris Pro Bold"!important;
+    line-height: 1.4;
+    margin-bottom: 5.55vh;
+}
+.text-content-rt-1 {
+    color: #231f20;
+    font-size: 2vh;
+    text-align: justify;
+    font-weight: lighter;
+    font-family: "Paris Pro Bold"!important;
+    line-height: 1.4;
+    margin-bottom: 5.55vh;
+}
+.text-content-rt-2 {
+    color: #231f20;
+    font-size: 2vh;
+    text-align: justify;
+    font-weight: 800;
+    font-family: "Paris Pro Light"!important;
+    line-height: 1.4;
+}
+.text-content-rt-3 {
+    color: #231f20;
+    font-size: 2vh;
+    text-align: justify;
+    font-weight: lighter;
+    font-family: "Paris Pro Bold"!important;
+    line-height: 1.4;
+    margin-bottom: 3.7vh;
+}
+.text-content-rt-4 {
+    color: #231f20;
+    font-size: 2vh;
+    text-align: justify;
+    font-weight: lighter;
+    font-family: "Paris Pro Bold"!important;
+    line-height: 1.4;
+    margin-bottom: 5.55vh;
+}
+.text-title-rt {
+    color: #898d90;
+    font-size: 2.5vh;
+    text-align: left;
+    font-weight: 500;
+    line-height: 1;
+    text-transform: uppercase;
+}
+.text-title-pinc-rt {
+    color: #ff4aff;
+    font-size: 3vh;
+    text-align: left;
+    font-weight: 900;
+    font-family: "Paris Pro Light"!important;
+    margin-bottom: 4.63vh;
+}
+.second-text-title-rt {
+    color: #000000;
+    font-size: 2.5vh;
+    text-align: left;
+    font-weight: 900;
+    font-family: "Paris Pro Light"!important;
+}
+.component.second-component {
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+.second-logo-rt {
+    width: 100%;
+    flex-grow: 0;
+    flex-basis: 37%;
+    max-height: 37%;
+    text-align: right;
+    padding: 9.26vh 11.11vh 0 0;
+}
+.second-content-rt {
+    width: 100%;
+    height: 80%;
+    display: flex;
+}
+.second-content-part-rt {
+    max-width: 33%;
+    flex-basis: 33%;
+    flex-grow: 0;
+    padding: 0 6.5vh 0 6.6vh;
+}
+.second-content-part-rt-2 {
+    max-width: 33%;
+    flex-basis: 33%;
+    flex-grow: 0;
+    padding: 0 2.78vh 0 6.6vh;
+}
+.second-content-part-rt-3 {
+    max-width: 33%;
+    flex-basis: 33%;
+    flex-grow: 0;
+    padding: 0 11.11vh 0 4.63vh;
+}
+
+
+.component.third-component {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.thrid-container-white {
+    flex-grow: 0;
+    flex-basis: 25%;
+    max-width: 25%;
+    height: 100%;
+    background-color: #F4F1ED;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.third-component a {
+    color: inherit;
+    cursor: pointer;
+    display: block;
+}
+.thrid-container-black {
+    flex-grow: 0;
+    flex-basis: 25%;
+    max-width: 25%;
+    height: 100%;
+    background-color: #1D1C20;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+.third-blank-33-rt {
+    flex-grow: 0;
+    max-height: 33.33%;
+    flex-basis: 33.33%;
+}
+.third-second-first-rt{
+    flex-grow: 0;
+    max-height: 30%;
+    flex-basis: 30%;
+}
+.third-second-second-rt {
+    width: 60%;
+    margin-left: 5.2vh;
+}
+.third-text-header-black-rt {
+    font-size: 3.33vh;
+    color: #1D1C20;
+    text-align: left;
+    font-weight: 400;
+    line-height: 1.2;
+    font-family: "Paris Pro Bold"!important;
+}
+.third-text-content-black-rt {
+    font-size: 1.85vh;
+    color: #1D1C20;
+    text-align: left;
+    font-weight: lignter;
+    font-family: "Paris Pro Bold"!important;
+    line-height: 2;
+}
+.third-text-content-black-rt-light {
+    font-size: 1.85vh;
+    color: #1D1C20;
+    text-align: left;
+    font-weight: lignter;
+    font-family: "Paris Pro Light"!important;
+    line-height: 2;
+}
+.third-text-header-white-rt {
+    font-size: 3.33vh;
+    color: #FEFFFF;
+    text-align: left;
+    font-weight: 400;
+    line-height: 1.2;
+    font-family: "Paris Pro Bold"!important;
+}
+.third-text-content-white-rt {
+    font-size: 1.85vh;
+    color: #FEFFFF;
+    text-align: left;
+    font-family: "Paris Pro Light"!important;
+    line-height: 2;
+}
+.third-text-header-yellow-rt {
+    font-size: 3.33vh;
+    color: #c9ae96;
+    text-align: justify;
+    text-transform: uppercase;
+    font-weight: 400;
+    line-height: 1.2;
+    font-family: "Paris Pro Bold"!important;
+}
+.third-text-content-yellow-rt {
+    font-size: 1.85vh;
+    color: #c9ae96;
+    text-align: justify;
+    font-weight: bold;
+    line-height: 2;
+    font-family: "Paris Pro Light"!important;
+    letter-spacing: 1px;
+}
+.third-logo-rt {
+    width: 100%;
+    text-align: right; 
+    padding: 9.26vh 11.11vh 0 0;
+    flex-grow: 0;
+    flex-basis: 33.33%;
+}
+.third-third-content-rt {
+    width: 70%;
+    margin-right: 2.6vw;
+    text-align: center;
+}
+
+
+
+.component.fourth-component {
+    background-color: #f3ede5;
+    display: flex;
+    position: relative;
+}
+.fourth-component .rec-carousel-wrapper {
+    text-align: center;
+    position: relative;
+}
+.fourth-project-detail-photo-rt .rec.rec-carousel > div {
+    margin-right: 0!important;
+}
+
+.fourth-logo-container-rt {
+    width: 100%;
+    padding: 9.26vh 11.11vh 0 11.11vh;
+    display: block;
+    text-align: right;
+}
+.fourth-project-description-rt {
+    background-color: white;
+    padding: 1.85vh;
+    margin-left: 2.6vw;
+    max-width: 22vw;
+}
+.fourth-project-detail-photo-rt {
+    max-width: 78%;
+    flex-basis: 78%;
+    position: relative;
+}
+.cukhLH {
+    margin-right: 0!important;
+}
+.fourth-description-page-rt {
+    display: flex;
+    transition: 0.7s;
+    margin: auto 0;
+}
+.fourth-description-title-rt {
+    color: #252639;
+    font-size: 3.33vh;
+    font-family: Paris-Pro-Ultra-Extra-Light;
+    font-weight: 600;
+    position: relative;
+    padding: 0 2ch;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+.fourth-description-content-rt {
+    text-align: left;
+    color: #383838;
+    font-size: 2vh;
+    padding-top: 0.9vh;
+    font-family: Paris-Pro-Ultra-Extra-Light;
+    line-height: 2;
+    font-weight: bolder;
+    max-width: 98%;
+}
+.fourth-summary-page-rt {
+    display: flex;
+    flex-direction: column;
+    margin: auto 0;
+    transition: 0.7s;
+}
+.fourth-summary-page-rt .rec.rec-slider-container {
+    margin: 0 0 0 2.5vw;
+}
+.fourth-summary-page-rt img {
+    cursor: pointer;
+}
+.fourth-summary-page-rt .rec.rec-item-wrapper {
+    width: auto!important;
+    padding-right: 2vw!important;
+    height: 100%;
+}
+.fourth-project-detail-photo-rt .rec.rec-item-wrapper {
+    width: auto!important;
+    padding-right: 2vw!important;
+    height: 100%;
+}
+.fourth-main-projects-navigation-rt {
+    display: flex;
+    width: 100%;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.fourth-main-projects-navigation-rt > img {
+    height: 4vh;
+    transition: 0.7s;
+}
+.rec.rec-pagination {
+    display: none;
+}
+.rec.rec-arrow {
+    display: none;
+}
+.fourth-project-summary-photo-rt {
+    position: relative;
+}
+.fourth-left-arrow-summary-rt {
+    position: absolute;
+    top: calc(50% + 1.5vh);
+    left: 3vw;
+    transition: 0.7s;
+}
+.fourth-left-arrow-summary-rt > img {
+    cursor: pointer;
+    height: 3vh;
+}
+.fourth-right-arrow-summary-rt {
+    position: absolute;
+    bottom: calc(50% - 1.5vh);
+    right: 3vw;
+}
+.fourth-right-arrow-summary-rt > img {
+    cursor: pointer;
+    height: 3vh;
+}
+.fourth-carousel-2-elements-rt {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.lgksPe:hover {
+    background-color: black!important;
+}
+.fourth-summary-inner-div {
+    position: relative;
+}
+.fourth-project-description-on-image-rt {
+    position: absolute;
+    width: 16vw;
+    left: calc( 50% - 8vw);
+    top: 20%;
+    text-align: center;
+}
+.fourth-project-description-on-image-rt > h3 {
+    text-transform: uppercase;
+    color: white;
+    font-size: 3.33vh;
+    line-height: 1.5;
+}
+.fourth-project-description-on-image-rt > span {
+    color: #c9ae96;
+    font-size: 1.85vh;
+}
+
+
+.component.fifth-component {
+    background-color: #f3ede5;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.fifth-component > div {
+    flex-grow: 0;
+    flex-basis: 50%;
+    max-width: 50%;
+    height: 100%;
+}
+.fifth-img-back-rt {
+    background-image: url('../../public/img/magazine-banner.jpg');
+    background-size: cover;
+}
+.fifth-content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+.fifth-journal-summary-content-rt {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+    max-width: 50%;
+    flex-grow: 0;
+}
+.fifth-content-element {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.fifth-content-element > img {
+    width: 100%;
+    cursor: pointer;
+}
+.fifth-content-element > h5 {
+    font-size: 3.33vh;
+    font-weight: 900;
+    line-height: 1.35;
+    letter-spacing: 1px;
+    font-family: "Paris Pro Bold"!important;
+    margin-bottom: 5px;
+    color: rgb(198, 149, 123);
+}
+.fifth-content-element > h6 {
+    margin-bottom: 5px;
+    font-size: 2.22vh;
+    font-weight: 500;
+    line-height: 1.6;
+    font-family: "Paris Pro Bold"!important;
+    color: rgb(181, 159, 135);
+}
+.fifth-content-element > p {
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 1.3vh;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 900;
+    line-height: 1.43;
+}
+.fifth-logo {
+    width: 100%;
+    padding: 9.26vh 11.11vh 0 11.11vh;
+    text-align: right;
+}
+.fifth-content-container {
+    padding: 16px;
+}
+.fifth-detail-left-rt {
+    flex-basis: 50%;
+    max-width: 50%;
+}
+.fifth-detail-left-rt > img {
+    width: 100%;
+    padding-top: 4.63vh;
+}
+.fifth-journal-detail-content-rt {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px 9.26vh;
+}
+.fifth-journal-detail-content-rt > img {
+    padding: 4.63vh 1.85vh 4.63vh 0;
+}
+.fifth-journal-detail-content-rt > h5 {
+    font-size: 3.33vh;
+    font-weight: 900;
+    line-height: 1.35;
+    letter-spacing: 1px;
+    font-family: "Paris Pro Bold"!important;
+    margin-bottom: 5px;
+    padding-left: 10.4vw;
+    color: rgb(198, 149, 123);
+}
+.fifth-journal-detail-content-rt > h6 {
+    margin-bottom: 4.6vh;
+    font-size: 2.22vh;
+    font-weight: 500;
+    line-height: 1.6;
+    padding-left: 10.4vw;
+    font-family: "Paris Pro Bold"!important;
+    color: rgb(181, 159, 135);
+}
+.fifth-journal-detail-content-rt > p {
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 1.67vh;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 500;
+    line-height: 1.43;
+}
+
+.component.sixth-component {
+    background-color: #f3ede5;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.sixth-info-rt {
+    max-height: 50%;
+    flex-basis: 50%;
+    flex-grow: 0;
+    padding-top: 9.26vh;
+    text-align: center;
+    justify-content: center;
+}
+.sixth-form-container-rt {
+    background-color: #1a212c;
+    height: 100%;
+    max-width: 50%;
+    flex-basis: 50%;
+    display: flex;
+    flex-grow: 0;
+    flex-direction: column;
+}
+.sixth-form-rt {
+    flex-grow: 0;
+    max-height: 50%;
+    flex-basis: 50%;
+    display: flex;
+}
+.first-blank-30-rt {
+    max-width: 30%;
+    flex-basis: 30%;
+    flex-grow: 0;
+}
+.sixth-form-block-rt {
+    max-width: 40%;
+    flex-basis: 40%;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: column;
+}
+.sixth-form-title-rt {
+    font-size: 3.33vh;
+    color: #fafafa;
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 1.6;
+    font-family: "Paris Pro Bold"!important;
+    margin-bottom: 6.5vh;
+}
+.sixth-form-subtitle-rt {
+    font-size: 2vh;
+    color: #c9ae96;
+    margin-bottom: 5.55vh;
+    text-align: center;
+    font-weight: bold;
+    line-height: 2;
+    font-family: "Paris Pro Light"!important;
+}
+.sixth-form-subtitle-container-rt {
+    margin-bottom: 4.62vh;
+}
+
+.sixth-form-rt form {
+    text-align: center;
+    margin-top: 3vh;
+}
+.sixth-form-rt .MuiFormLabel-root {
+    color: #c9ae96;
+}
+.MuiInput-underline:before {
+    border-bottom: 1px solid #c9ae96!important;
+}
+.MuiFormLabel-root.Mui-focused {
+    color: #c9ae96!important;
+}
+.MuiInput-underline:after {
+    border-bottom: 2px solid #c9ae96!important;
+}
+.MuiInputBase-input {
+    color: #c9ae96!important;
+    font-size: 1.85vh!important;
+}
+.MuiInputLabel-formControl {
+    font-size: 1.32vh!important;
+}
+.sixth-form-textfield {
+    padding: 0 0 0 3.7vh!important;
+    margin-bottom: 2.31vh   !important;
+    width: 100%;
+}
+.sixth-right-rt {
+    max-width: 50%;
+    flex-basis: 50%;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: column;
+}
+.sixth-logo-rt {
+    text-align: right;
+    padding: 9.26vh 11.11vh 0 0;
+    max-height: 33.33%;
+    flex-basis: 33.33%;
+}
+.sixth-content-rt {
+    text-align: center;
+    display: flex;
+    max-height: 66.67%;
+    flex-basis: 66.67%;;
+}
+.flex-w-26-rt {
+    max-width: 26%;
+    flex-basis: 26%;
+    flex-grow: 0;
+}
+.flex-w-44-rt {
+    max-width: 48%;
+    flex-basis: 48%;
+    flex-grow: 0;
+    text-align: left;
+}
+.sixth-content-rt h6 {
+    font-size: 2.78vh;
+    color: #424440;
+    font-weight: bold;
+    line-height: 2;
+    font-family: "Paris Pro Bold"!important;
+    margin: 0;
+}
+.sixth-be-happy {
+    color: #424440;
+    font-size: 7.6vh;
+    font-weight: bold;
+    font-family: "Paris Pro Light"!important;
+    display: block;
+    line-height: 1;
+}
+.sixth-work-with {
+    color: #424440;
+    font-size: 2.41vh;
+    margin-top: 3.7vh;
+    font-weight: bold;
+    font-family: "Paris Pro Light"!important;
+    display: block;
+}
+.sixth-solution {
+    color: 424440;
+    font-size: 3.7vh;
+    font-weight: bold;
+    line-height: 1;
+    font-family: "Paris Pro Light"!important;
+}
+.sixth-and-rt {
+    padding-top: 2.3vh;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.sixth-and-rt .img-part {
+    flex-grow: 0;
+    max-width: 33.33%;
+    flex-basis: 33.33%;
+}
+.sixth-and-rt .text-part {
+    flex-grow: 0;
+    max-width: 66.67%;
+    flex-basis: 66.67%;
+}
+.sixth-and-rt span {
+    color: #424440;
+    font-size: 2.8vh;
+    font-weight: bold;
+    line-height: 1.5;
+    font-family: "Paris Pro Light"!important;
+}
+.sixth-form-submit {
+    width: 10vh;
+    background-color: #c9ae96!important;
+    font-size: 2.78vh!important;
+    margin-top: 4.63vh!important;
+    border-radius: 0!important;
+    text-align: right;
+}
+.btn-back-rt {
+    float: left;
+    transition: .6s;
+    border: none;
+    outline: none;
+    background: none;
+}
+.btn-back-rt img {
+    width: 8vw;
+}
+
+@media (max-width: 2000px) {
+    @media (min-width: 1900px) {
+        .award-winning > span {
+            font-size: 4vh;
+        }
+    }
+}
+@media (max-width: 900px) {
+    @media (max-height: 700px) {
+        .we-are-rt {
+            font-size: 4.5vh;
+        }
+        .award-winning > span {
+            font-size: 3vh;
+        }
+        .first-description-content-rt > p {
+            font-size: 1.7vh;
+            margin-bottom: 3.4vh;
+        }
+        .fourth-description-content-rt {
+            font-size: 1.8vh;
+            line-height: 1.5;
+        }
+    }
+}
+@media (max-width: 576px) {
+    .main-logo {
+        width: 30.77vw;
+        cursor: pointer;
+    }
+    .main-area-rt {
+        width: 100%;
+        height: 100%;
+    }
+    .navbar-container-rt {
+        display: none;
+    }
+    .fourth-menu-left-rt {
+        display: none;
+    }
+    .component.first-component {
+        display: flex;
+        flex-direction: column;
+        background: none;
+    }
+    .mobile-home-img {
+        flex-basis: 80%;
+        max-height: 80%;
+        background-image: url(../../public/img/mobile/home/home.png);
+        background-size: cover;
+        padding: 1.92vw 3.84vw 0 0;
+        text-align: right;
+    }
+    .mobile-home-content {
+        width: 100%;
+        padding: 0 5%;
+        flex-basis: 20%;
+        max-height: 20%;
+        display: flex;
+    }
+    .mobile-home-content > p {
+        font-size: 3vw;
+        font-family: "Paris Pro Light"!important;
+        font-weight: 900;
+        margin: auto;
+    }
+
+
+    .component.second-component {
+        display: flex;
+        background: #e4e3df;
+        flex-direction: column;
+    }
+    .mobile-about-first {
+        padding: 1.92vw 3.84vw 0 0 ;
+        flex-basis: 13%;
+        max-height: 13%;
+        text-align: right;
+    }
+    .mobile-about-second {
+        flex-basis: 27%;
+        min-height: 27%;
+        display: flex;
+        flex-direction: column;
+    }
+    .mobile-about-second > img {
+        max-width: 95%;
+        margin: auto;
+        margin-top: 0;
+    }
+    .mobile-about-third {
+        flex-basis: 25%;
+        max-height: 25%;
+        padding: 0 5vw;
+    }
+    .mobile-about-third h6 {
+        color: #000000;
+        font-size: 3.5vw;
+        text-align: left;
+        font-weight: 300;
+        font-family: "Paris Pro Bold"!important;
+        line-height: 2;
+        margin: 0;
+    }
+    .mobile-about-fourth {
+        flex-basis: 17%;
+        max-height: 17%;
+        padding: 0 5vw;
+    }
+    .mobile-about-fourth h6 {
+        color: #000000;
+        font-size: 3.5vw;
+        text-align: left;
+        font-weight: 300;
+        font-family: "Paris Pro Bold"!important;
+        line-height: 2;
+    }
+    .mobile-about-fifth {
+        flex-basis: 18%;
+        max-height: 18%;
+        padding: 0 5vw;
+    }
+    .mobile-about-fifth h6 {
+        font-size: 3.5vw; 
+        margin: 0;
+        line-height: 2;
+        color: black;
+        font-family: "Paris Pro Bold"!important;
+    }
+
+
+    .component.third-component {
+        display: flex;
+        flex-direction: row;
+    }
+    .mobile-special-first {
+        flex-basis: 50%;
+        max-width: 50%;
+        display: flex;
+        flex-direction: column;
+    }
+    .mobile-special-logo {
+        padding: 1.92vw 3.84vw 0 0;
+        flex-basis: 45%;
+        max-height: 45%;
+        text-align: right;
+    }
+    .mobile-special-black {
+        flex-basis: 50%;
+        max-height: 50%;
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(36,29,33);
+    }
+    .mobile-special-white {
+        flex-basis: 50%;
+        max-height: 50%;
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(228,227,223);
+    }
+    .mobile-special-content {
+        display: flex;
+        flex-basis: 55%;
+        max-height: 55%;
+        position: relative;
+    }
+    .mobile-special-content > img {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 9.26vw;
+    }
+    .mobile-special-padding {
+        flex-basis: 15%;
+        max-width: 15%;
+    }
+    .mobile-special-title-black {
+        font-size: 5vw;
+        color: #1D1C20;
+        text-align: left;
+        font-weight: 400;
+        line-height: 1.2;
+        font-family: "Paris Pro Bold"!important;
+    }
+    .mobile-special-content-black {
+        font-size: 3vw;
+        color: #1D1C20;
+        text-align: left;
+        font-weight: lignter;
+        font-family: "Paris Pro Bold"!important;
+        line-height: 2;
+    }
+    .mobile-special-title-white {
+        font-size: 5vw;
+        color: #FEFFFF;
+        text-align: left;
+        font-weight: 400;
+        line-height: 1.2;
+        font-family: "Paris Pro Bold"!important;
+    }
+    .mobile-special-content-white {
+        font-size: 3vw;
+        color: #c9ae96;
+        text-align: justify;
+        font-weight: bold;
+        line-height: 2;
+        font-family: "Paris Pro Light"!important;
+    }
+
+
+    .component.fourth-component {
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+    }
+    .mobile-project-logo {
+        flex-basis: 32%;
+        min-height: 32%;
+        padding: 1.92vw 3.84vw 0 0 ;
+        text-align: right;
+    }
+    .mobile-project-big-image > img {
+        width: 100%;
+        margin-bottom: 5vw;
+    }
+    .mobile-project-description-wrapper {
+        width: 80%;
+        margin: auto;
+    }
+    .mobile-project-description {
+        float: right;
+        padding: 1vw 0 3vw;
+    }
+    .mobile-project-description > h5 {
+        color: #252639;
+        font-size: 3vw;
+        font-family: Paris-Pro-Ultra-Extra-Bold;
+        font-weight: 300;
+        position: relative;
+        text-decoration: none;
+        text-transform: uppercase;
+        margin-bottom: 0;
+    }
+    .mobile-project-description > span {
+        display: block;
+        text-align: left;
+        color: #383838;
+        font-size: 2vw;
+        padding-top: 0.9vw;
+        font-family: Paris-Pro-Ultra-Extra-Light;
+        line-height: 1;
+        font-weight: bolder;
+        text-transform: uppercase;
+    }
+    .mobile-project-small-image {
+        width: 80%;
+        margin: auto;
+    }
+    .mobile-project-small-image > img {
+        width: 100%;
+    }
+    .mobile-project-detail-description {
+        width: 80%;
+        margin: auto;
+        margin-bottom: 5vw;
+    }
+    .btn-back-rt {
+        position: absolute;
+        right: 10%;
+        top: 13vh;
+    }
+
+
+    .sixth-logo-rt {
+        text-align: left;
+        padding: 1.92vw 3.84vw 0 0 ;
+        max-height: 20%;
+        flex-basis: 20%;
+        text-align: right;
+    }
+    .sixth-info-rt {
+        max-height: 35%;
+        flex-basis: 35%;
+        padding-top: 0;
+        text-align: center;
+        justify-content: center;
+    }
+    .sixth-form-rt {
+        max-height: 45%;
+        flex-basis: 45%;
+        padding: 3vw;
+    }
+    .sixth-form-block-rt {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+    .sixth-form-title-rt {
+        font-size: 3vw;
+        margin-bottom: 25vw;
+    }
+    .sixth-form-subtitle-rt {
+        font-size: 3vw;
+    }
+    .sixth-form-rt form {
+        text-align: center;
+        margin-top: 3vw;
+    }
+    .MuiInputBase-input {
+        font-size: 2.5vw!important;
+    }
+    .MuiInputLabel-formControl {
+        font-size: 2.5vw!important;
+    }
+    .sixth-form-textfield {
+        padding: 0 0 0 5vw!important;
+        margin-bottom: 5vw!important;
+        width: 100%;
+    }
+    .sixth-form-submit {
+        width: 100%;
+        font-size: 3vw!important;
+        margin-top: 3vw!important;
+    }
+    .sixth-right-rt {
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        height: 100%
+    }
+    .flex-w-26-rt {
+        max-height: 26%;
+        flex-basis: 26%;
+        flex-grow: 0;
+    }
+    .flex-w-44-rt {
+        max-height: 64%;
+        flex-basis: 64%;
+        text-align: left;
+        max-width: 70%;
+        margin: auto;
+    }
+    .sixth-right-footer {
+        max-height: 10%;
+        flex-basis: 10%;
+        padding-left: 4vw;
+        width: 70%;
+        margin: auto;
+    }
+    .sixth-right-footer > span{
+        display: block;
+    }
+    .sixth-right-footer img {
+        width: 3vw;
+    }
+    .flex-w-44-rt h6 {
+        font-size: 3vw;
+        color: #424440;
+        font-weight: bold;
+        line-height: 2;
+        font-family: "Paris Pro Bold"!important;
+        margin: 0;
+    }
+    .sixth-be-happy {
+        color: #424440;
+        font-size: 7.6vw;
+        font-weight: bold;
+        font-family: "Paris Pro Light"!important;
+        display: block;
+        line-height: 1;
+    }
+    .sixth-work-with {
+        font-size: 2.41vw;
+        line-height: 5;
+        margin: 0;
+    }
+    .sixth-solution {
+        color: #424440;
+        font-size: 5vw;
+        font-weight: bold;
+        line-height: 1;
+        font-family: "Paris Pro Light"!important;
+        position: absolute;
+        right: 0;
+        top: 20%;
+    }
+    .sixth-and-rt {
+        padding-top: 2.3vw;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        margin-bottom: 6vh;
+    }
+    .sixth-and-rt .img-part {
+        max-width: 100%;
+        flex-basis: 100%;
+    }
+    .text-part > span {
+        font-size: 3.5vw;
+    }
+    .sixth-and-rt span {
+        color: #424440;
+        font-size: 2.8vw;
+        font-weight: bold;
+        line-height: 1.5;
+        font-family: "Paris Pro Light"!important;
+    }
+    .sixth-right-footer > span {
+        font-size: 3vw;
+    }
+
+
+    .menu-page-btn-toggle {
+        position: absolute;
+        margin: 0;
+        width: 50px;
+        height: 50px;
+        background: rgba(220, 220, 220, 0.3);
+        border: none;
+        left: 0;
+        top: 0;
+        border-radius: none;
+    }
+    .menu-page-btn-toggle > div {
+        position: absolute;
+        background: #fff;
+        border: none;
+        margin: 0;
+        padding: 0;
+        height: 2px;
+    }
+    .menu-page-btn-toggle .first-line {
+        width: 23px;
+        left: 10px;
+        top: 15px;
+    }
+    .menu-page-btn-toggle .second-line {
+        left: 10px;
+        top: 23px;
+        width: 13px;
+    }
+    .menu-page-btn-toggle .third-line {
+        left: 18px;
+        top: 30px;
+        width: 25px;
+    }
+    .menuPage{
+        background:#000;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: -100%;
+        top: 0;
+        transition: .8s cubic-bezier(0.87, 0.09, 0.25, 1);
+    }
+    .mobile-menu-first {
+        padding: 1.92vw 0 0 3.84vw;
+        flex-basis: 32%;
+        max-height: 32%;
+    }
+    .mobile-menu-second {
+        flex-basis: 57%;
+        max-height: 57%;
+        display: flex;
+        flex-direction: column;
+        padding-left: 9.25vw;
+    }
+    .mobile-menu-second > h5 {
+        color: white;
+        font-size: 5.55vw;
+        line-height: 2;
+        text-transform: uppercase;
+        font-family: "Paris Pro Bold";
+    }
+    .mobile-menu-second > span {
+        color: white;
+        font-size: 4vw;
+        line-height: 2;
+        letter-spacing: 0.2vw;
+        font-family: "Paris Pro Light";
+    }
+    .mobile-menu-fourth {
+        flex-basis: 11%;
+        max-height: 11%;
+        display: flex;
+    }
+    .mobile-menu-fourth-first {
+        flex-basis: 65%;
+        max-width: 65%;
+    }
+    .mobile-menu-fourth-second {
+        flex-basis: 35%;
+        max-width: 35%;
+    }
+    .mobile-menu-fourth-second > span {
+        color: white;
+        font-size: 2.77vw;
+        line-height: 2.5;
+        display: block;
+        font-family: "Paris Pro Light";
+    }
+    .mobile-menu-fourth-second > span > img {
+        width: 3.5vw;
+    }
+    .menu-page-cross-btn {
+        position: absolute;
+        margin: 10px;
+        width: 32px;
+        height: 32px;
+        background: rgba(220, 220, 220, 0.1);
+        border: none;
+        right: 0;
+        border-radius: 5px;
+    }
+    .menu-page-cross-btn div {
+        position: absolute;
+        width: 20px;
+        height: 3px;
+        background: white;
+        top: 15px;
+        left: 6px;
+    }
+    .menu-page-cross-btn .first-line {
+        transform: rotate(45deg);
+    }
+    .menu-page-cross-btn .second-line {
+        transform: rotate(135deg);
+    }
+    .menu-page-list {
+        color: white;
+        list-style: none;
+        padding-top: 5vh;
+    }
+    .menu-page-list li {
+        line-height: 2;
+        font-size: 3.5vw;
+    }
+    .mobile-menu-project-second {
+        flex-basis: 57%;
+        max-height: 57%;
+        display: flex;
+        flex-direction: column;
+        padding-left: 9.25vw;
+    }
+    .mobile-menu-project-second > h5 {
+        color: white;
+        font-size: 5.55vw;
+        line-height: 2;
+        text-transform: uppercase;
+        font-family: "Paris Pro Bold";
+    }
+    .mobile-menu-project-second > span {
+        color: white;
+        font-size: 4vw;
+        line-height: 2;
+        font-family: "Paris Pro Light";
+        letter-spacing: 1px;
+    }
+    .btn-back-rt img {
+        width: 20vw;
+    }
+}
